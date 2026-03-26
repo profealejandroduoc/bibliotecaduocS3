@@ -73,14 +73,36 @@ public class LibroRepository {
 
 
     public Libro libroporId(int id) {
-        // TODO Auto-generated method stub
-        //throw new UnsupportedOperationException("Unimplemented method 'libroporId'");
         for (Libro libro : listaLibros) {
             if(id==libro.getId()){
                 return libro;
             }
         }
         return null;
+    }
+
+    public Libro libroporIsbn(String isbn) {
+        for (Libro libro : listaLibros) {
+            if(libro.getIsbn().equals(isbn)){
+                return libro;
+            }
+        }
+
+        return null;
+    }
+
+    public Libro modificarLibro(int id, Libro libro) {
+        Libro buscado=libroporId(id);
+        if (buscado!=null){
+            buscado.setAutor(libro.getAutor());
+            buscado.setEditorial(libro.getEditorial());
+            buscado.setFechaPublicacion(libro.getFechaPublicacion());
+            buscado.setIsbn(libro.getIsbn());
+            buscado.setTitulo(libro.getTitulo());
+            return buscado;
+        }
+        return null;
+        
     }
 
 }

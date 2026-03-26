@@ -30,4 +30,17 @@ public class LibroService {
         //throw new UnsupportedOperationException("Unimplemented method 'readById'");
         return libroRepository.libroporId(id);
     }
+
+    public Libro readByIsbn(String isbn) {
+        // TODO Auto-generated method stub
+        //throw new UnsupportedOperationException("Unimplemented method 'readByIsbn'");
+        return libroRepository.libroporIsbn(isbn);
+    }
+
+    public Libro updateLibro(int id, Libro libro) {
+        return libroRepository.modificarLibro(id,libro);
+        
+    }
+
+
 }
