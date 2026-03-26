@@ -24,4 +24,10 @@ public class LibroService {
     public void seed(){
         libroRepository.seed();
     }
+
+    public Libro readById(int id) {
+        // TODO Auto-generated method stub
+        //throw new UnsupportedOperationException("Unimplemented method 'readById'");
+        return libroRepository.libroporId(id);
+    }
 }

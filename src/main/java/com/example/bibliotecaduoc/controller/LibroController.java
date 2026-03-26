@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.bibliotecaduoc.model.Libro;
 import com.example.bibliotecaduoc.services.LibroService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +34,27 @@ public class LibroController {
     public Libro postLibro(@RequestBody Libro libro) {
         return libroService.create(libro);
     }
+
+    @GetMapping("{id}")
+    public Libro getLibroById(@PathVariable int id) {
+        return libroService.readById(id);
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("inicializar")
     public String inicializar() {
