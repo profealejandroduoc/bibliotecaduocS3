@@ -20,4 +20,8 @@ public class LibroService {
     public Libro create(Libro libro) {
         return libroRepository.agregar(libro);
     }
+
+    public void seed(){
+        libroRepository.seed();
+    }
 }
