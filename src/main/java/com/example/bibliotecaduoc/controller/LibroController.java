@@ -64,6 +64,17 @@ public class LibroController {
         libroService.seed();
         return "Libros creados";
     }
+
+    @GetMapping("/total")
+    public String getTotal() {
+        return libroService.totalLibros();
+    }
+
+    @GetMapping("mayores/{year}")
+    public List<Libro> getMayores(@PathVariable int year) {
+        
+        return libroService.getMayores(year);
+    }
     
     
 }

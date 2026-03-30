@@ -46,5 +46,14 @@ public class LibroService {
         return libroRepository.borrar(id);
     }
 
+    public String totalLibros(){
+        int cantidad=libroRepository.cantidadLibros();
+        return "TOTAL LIBROS " + cantidad;
+    }
+
+    public List<Libro> getMayores(int year) {
+        return libroRepository.mayores(year);
+    }
+
 
 }

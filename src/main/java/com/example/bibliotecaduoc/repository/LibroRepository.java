@@ -127,4 +127,18 @@ public class LibroRepository {
 
     }
 
+    public int cantidadLibros(){
+        return listaLibros.size();
+    }
+
+    public List<Libro> mayores(int year) {
+        List<Libro> mayores=new ArrayList<>();
+        for (Libro libro : listaLibros) {
+            if(libro.getFechaPublicacion()>=year){
+                mayores.add(libro);
+            }
+        }
+        return mayores;
+    }
+
 }
