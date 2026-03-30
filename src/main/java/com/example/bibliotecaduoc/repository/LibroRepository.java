@@ -70,11 +70,9 @@ public class LibroRepository {
                 "Victor Hugo"));
     }
 
-
-
     public Libro libroporId(int id) {
         for (Libro libro : listaLibros) {
-            if(id==libro.getId()){
+            if (id == libro.getId()) {
                 return libro;
             }
         }
@@ -83,7 +81,7 @@ public class LibroRepository {
 
     public Libro libroporIsbn(String isbn) {
         for (Libro libro : listaLibros) {
-            if(libro.getIsbn().equals(isbn)){
+            if (libro.getIsbn().equals(isbn)) {
                 return libro;
             }
         }
@@ -92,8 +90,8 @@ public class LibroRepository {
     }
 
     public Libro modificarLibro(int id, Libro libro) {
-        Libro buscado=libroporId(id);
-        if (buscado!=null){
+        Libro buscado = libroporId(id);
+        if (buscado != null) {
             buscado.setAutor(libro.getAutor());
             buscado.setEditorial(libro.getEditorial());
             buscado.setFechaPublicacion(libro.getFechaPublicacion());
@@ -102,7 +100,31 @@ public class LibroRepository {
             return buscado;
         }
         return null;
+
+    }
+
+    public String borrar(int id) {
+        // if (listaLibros.remove(libroporId(id))){
+        // return "Libro eliminado";
+        // }
+        // return "Error al eliminar";
+
+        /**OTRA FORMA */
+        // for (Libro libro : listaLibros) {
+        // if(id==libro.getId()){
+        // listaLibros.remove(libro);
+        // return "libro eliminado";
+        // }
+        // }
+        // return "Error al eliminar";
         
+        /**OTRA FORMA */
+        if (listaLibros.removeIf(lbr -> lbr.getId() == id)) {
+            return "Libro eliminado";
+        }
+
+        return "Error al eliminar";
+
     }
 
 }

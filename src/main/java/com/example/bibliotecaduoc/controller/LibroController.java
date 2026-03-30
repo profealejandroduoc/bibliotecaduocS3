@@ -56,25 +56,8 @@ public class LibroController {
 
     @DeleteMapping("{id}")
     public String deleteLibro(@PathVariable int id){
-        return "Implementar en la casita";
+        return libroService.delete(id);
     }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @GetMapping("inicializar")
     public String inicializar() {

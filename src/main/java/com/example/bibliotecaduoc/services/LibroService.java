@@ -42,5 +42,9 @@ public class LibroService {
         
     }
 
+    public String delete(int id) {
+        return libroRepository.borrar(id);
+    }
+
 
 }
